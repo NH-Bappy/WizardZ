@@ -104,3 +104,14 @@ nav button{
 .section1button img{
     height: 60px;
 }
+
+.section2{
+    
+}
+.section2 .services{
+    background-color: rebeccapurple;
+    padding: 40px 120px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center ;
+}
