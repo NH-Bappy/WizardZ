@@ -67,9 +67,6 @@ function section1Animation(){
     );
 }
 
-// section1Animation()
-
-
 //==================================== section 2
 // gsap.from(".services h3" , {
 //     x:-100,
@@ -83,49 +80,54 @@ function section1Animation(){
 //     }
 // })
 
+function section2Animation(){
+    let tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".section2",
+            scroller: "body",
+            // markers:true,
+            start: "top 50%",
+            end: "top 0",
+            scrub: 2,
+        }
+    })
 
-let tl2 = gsap.timeline({
-    scrollTrigger:{
-        trigger: ".section2",
-        scroller: "body",
-        // markers:true,
-        start:"top 50%",
-        end: "top 0",
-        scrub:2,
-    }
-})
+    tl2.from(".services", {
+        x: 30,
+        opacity: 0,
+        duration: 1,
+    })
 
-tl2.from(".services" , {
-    x:30,
-    opacity:0,
-    duration:1,
-})
+    // line 1
+    tl2.from(".elem.line-1.left", {
+        x: -300,
+        opacity: 0,
+        duration: 2,
+        delay: 1,
+    }, "firstOneSameTime")
+    tl2.from(".elem.line-1.right", {
+        x: 300,
+        opacity: 0,
+        duration: 2,
+        delay: 1,
+    }, "firstOneSameTime")
 
-// line 1
-tl2.from(".elem.line-1.left" , {
-    x:-300,
-    opacity:0,
-    duration:2,
-    delay:1,
-},"firstOneSameTime")
-tl2.from(".elem.line-1.right" , {
-    x:300,
-    opacity:0,
-    duration:2,
-    delay:1,
-},"firstOneSameTime")
+    // line 2
+    tl2.from(".elem.line-2.left", {
+        x: -300,
+        opacity: 0,
+        duration: 2,
+        delay: 1
+    }, "secondOneSameTime")
 
-// line 2
-tl2.from(".elem.line-2.left" , {
-    x:-300,
-    opacity:0,
-    duration:2,
-    delay:1
-},"secondOneSameTime")
+    tl2.from(".elem.line-2.right", {
+        x: 300,
+        opacity: 0,
+        duration: 1,
+        delay: 1
+    }, "secondOneSameTime")
 
-tl2.from(".elem.line-2.right" , {
-    x:300,
-    opacity:0,
-    duration:1,
-    delay:1
-},"secondOneSameTime")
+}
+
+section1Animation();
+section2Animation();
